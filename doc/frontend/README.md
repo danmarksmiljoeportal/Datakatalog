@@ -245,6 +245,16 @@ const layerToggleLayers = ['urn:dmp:ds:skaermkort-daempet', 'urn:dmp:ds:ortofoto
 <LayerControl :api="api" :hiddenDatasets="layerToggleLayers"/>
 ```
 
+##### showQGISButton
+
+On the ClientAPI, there is a helper function for downloading datasets as a QGIS project. It is possible to add a "Download QGIS project" button to the settings menu in the LayerControl. Just add `showQGISButton` as an option like this:
+
+```html
+<LayerControl :api="api" :showQGISButton="true"/>
+```
+
+When the user presses the button, the datasets that are visible in the LayerControl, will be included in the QGOS projekt.
+
 ### DatasetStore
 
 The [DatasetStore](#datasetstore) component can be activated though the [LayerControl](#layercontrol) or as a stand alone. The [DatasetStore](#datasetstore) component is using the Client API to get access to the Datacatalog service. The [DatasetStore](#datasetstore) component makes it easy to find a dataset, see the relations between datasets and add datasets to the [LayerControl](#layercontrol). The [DatasetStore](#datasetstore) component shows all the details of a dataset including information about the related sources (like WMS and more) and the owner of a dataset.
