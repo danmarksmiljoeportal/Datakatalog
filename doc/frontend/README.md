@@ -91,6 +91,14 @@ api.load([
 ])
 ```
 
+#### id
+
+As described above, the datasetState is stored in the local storage in the browser. This datasetState is only accassible for the pages within the same hostname. This means that in the case where you have multiple maps on the same hostname, they will all share the same local storage and by that the same datasetState. 
+
+If you have a map that shouldn't share the same datasetState with another map with the same hostname, you can add an `id` (any string) to the Client API. Then the datasetState will be stored in the local storage with that id and will only be shared with onther maps that uses the Client API with the same id.
+
+In most cases this isn't relevant, but in some it might.
+
 ### OpenLayers
 
 To use the Client API with [OpenLayers](https://openlayers.org/), the active datasets can be added to the map with:
