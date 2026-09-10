@@ -35,8 +35,6 @@ jobs:
         with:
           source: ./doc
           destination: ./_site
-      - name: Copy static content
-        run: sudo cp ./static/* ./_site/ -r
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
